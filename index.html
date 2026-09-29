@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Shariah Investing Costs on the ASX</title>
+<meta name="description" content="A personal look at whether Shariah-compliant investing costs anything on the ASX, using S&P Dow Jones Indices' own Shariah index data.">
+<style>
+  html{color-scheme: light dark}
+  body{margin:0}
+  :root{
+    --bg:#f9f9f7; --surface:#fcfcfb; --text:#0b0b0b; --text-2:#3d3c39; --muted:#847f74;
+    --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,0.10);
+    --series-1:#2a78d6;
+    --series-2:#eb6834;
+    --bad:#b23b3b;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0d0d0d; --surface:#1a1a19; --text:#ffffff; --text-2:#d4d2c8; --muted:#9c988d;
+      --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,0.10);
+      --series-1:#3987e5; --series-2:#d95926; --bad:#e07a7a;
+    }
+  }
+  *{box-sizing:border-box}
+  body{background:var(--bg)}
+  .page{
+    max-width:640px; margin:0 auto; padding-inline:20px; padding-block:44px 64px;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color:var(--text);
+  }
+  h1{font-size:1.55rem; line-height:1.28; letter-spacing:-0.01em; margin:0 0 4px; text-wrap:balance}
+  .byline{color:var(--muted); font-size:0.85rem; margin:0 0 34px}
+  p{line-height:1.68; color:var(--text-2); font-size:1rem; margin:0 0 18px}
+  p.lead{color:var(--text); font-size:1.06rem}
+  strong{color:var(--text); font-weight:600}
+  .num{font-variant-numeric:tabular-nums}
+
+  .chart-block{margin:28px 0}
+  .legend{display:flex; gap:16px; font-size:0.8rem; color:var(--muted); margin-bottom:10px; flex-wrap:wrap}
+  .legend .dot{display:inline-block; width:9px; height:9px; border-radius:2px; margin-right:6px; vertical-align:middle}
+  svg.chart{width:100%; height:auto; overflow:visible}
+  .axis-label, .bar-label{font-size:9.5px; fill:var(--muted)}
+  .grid-line{stroke:var(--grid); stroke-width:1}
+  .baseline{stroke:var(--axis); stroke-width:1}
+  .tooltip{
+    position:absolute; pointer-events:none; background:var(--text); color:var(--bg);
+    font-size:0.76rem; padding:6px 9px; border-radius:6px; opacity:0; transition:opacity .1s;
+    white-space:nowrap; z-index:5; transform:translate(-50%,-100%);
+  }
+  .chart-wrap{position:relative}
+  .chart-caption{font-size:0.8rem; color:var(--muted); margin-top:8px}
+
+  table{width:100%; border-collapse:collapse; font-size:0.9rem; margin:20px 0}
+  caption{text-align:left; font-size:0.78rem; color:var(--muted); margin-bottom:8px; caption-side:top}
+  th,td{text-align:right; padding:8px; font-variant-numeric:tabular-nums; border-bottom:1px solid var(--grid)}
+  th:first-child, td:first-child{text-align:left; font-variant-numeric:normal}
+  thead th{color:var(--muted); font-weight:500; font-size:0.74rem; text-transform:uppercase; letter-spacing:0.03em}
+  tbody tr:last-child td{border-bottom:none}
+  .table-scroll{overflow-x:auto}
+
+  details{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 18px; margin:36px 0 0}
+  summary{cursor:pointer; font-size:0.92rem; color:var(--text); font-weight:600}
+  details p{margin-top:14px; font-size:0.92rem}
+  details p:last-child{margin-bottom:0}
+
+  footer{margin-top:32px; padding-top:16px; border-top:1px solid var(--grid)}
+  footer p{font-size:0.78rem; color:var(--muted); line-height:1.6; margin:0}
+  a{color:var(--series-1)}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>What Shariah investing actually costs on the ASX</h1>
+  <p class="byline">Aneeq Mohamed · using S&amp;P Dow Jones Indices' data as of 30 June 2026</p>
+
+  <p class="lead">I run a Shariah-compliant portfolio, and every stock I buy has to clear a screen first. No conventional banks, no companies carrying too much interest-bearing debt, none of a handful of excluded sectors. It's a decision I made for reasons that have nothing to do with returns. But I've wondered for a while what that decision has actually cost me, if anything, compared to just buying the index.</p>
+
+  <p>I didn't have to build that comparison from raw data myself. S&amp;P Dow Jones Indices already runs an official Shariah-compliant version of the ASX 200, called the S&amp;P/ASX 200 Shariah index, using close to the same kind of screen I apply to my own picks. They publish a scorecard comparing it against the plain S&amp;P/ASX 200 every quarter, so I pulled the latest one and went through it properly instead of guessing.</p>
+
+  <p>The short version: yes, it's cost something, and more than I expected.</p>
+
+  <p>Over the last three years the Shariah index returned <strong class="num">4.5%</strong> a year, against <strong class="num">10.6%</strong> for the plain ASX 200. Stretch it to five years and it's <strong class="num">4.3%</strong> versus <strong class="num">7.8%</strong>. QTD and YTD actually run the other way, Shariah ahead by a few points, so this isn't a one-way street, but the multi-year gap is the part that would actually matter to someone holding for the long run, which is how I invest anyway.</p>
+
+  <div class="chart-block">
+    <div class="legend">
+      <span><span class="dot" style="background:var(--series-1)"></span>S&amp;P/ASX 200 Shariah</span>
+      <span><span class="dot" style="background:var(--series-2)"></span>S&amp;P/ASX 200</span>
+    </div>
+    <div class="chart-wrap">
+      <svg class="chart" id="chart-returns" viewBox="0 0 600 290" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="tooltip" id="tip-returns"></div>
+    </div>
+    <p class="chart-caption">Total return, annualised for the 3 and 5 year columns.</p>
+  </div>
+
+  <p>What surprised me more is that the Shariah index hasn't even been calmer. I assumed cutting out banks and heavily leveraged companies would at least mean a smoother ride, a smaller basket, lower volatility, something to offset the lower return. It's the opposite. Its volatility has run higher than the plain index in both the 3 and 5 year windows.</p>
+
+  <div class="chart-block">
+    <div class="legend">
+      <span><span class="dot" style="background:var(--series-1)"></span>S&amp;P/ASX 200 Shariah</span>
+      <span><span class="dot" style="background:var(--series-2)"></span>S&amp;P/ASX 200</span>
+    </div>
+    <div class="chart-wrap">
+      <svg class="chart" id="chart-vol" viewBox="0 0 600 210" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="tooltip" id="tip-vol"></div>
+    </div>
+    <p class="chart-caption">Annualised standard deviation of returns.</p>
+  </div>
+
+  <p>Put the return and the volatility together with a Sharpe ratio (return above the risk-free rate, divided by volatility) and the gap gets worse, not better:</p>
+
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Window</th><th>Shariah</th><th>Conventional</th></tr></thead>
+      <tbody>
+        <tr><td>3 year</td><td>0.01</td><td>0.58</td></tr>
+        <tr><td>5 year</td><td>&minus;0.00</td><td>0.28</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>A Sharpe ratio near zero basically means you took on risk and were barely paid for it above the risk-free rate. The conventional index wasn't spectacular either, but it was clearly compensating investors better over this stretch.</p>
+
+  <p>Some of this makes sense once you look at what's actually excluded. Banks are a huge chunk of the ASX 200's weight, and Australian banks have had a strong multi-year run over exactly this period. A basket that structurally can't hold that sector is always going to feel it when that sector is the one leading. It shows up in the valuation numbers too, the Shariah basket trades cheaper on almost every multiple and pays a noticeably lower dividend, which lines up with a basket missing high-yield bank stocks.</p>
+
+  <div class="table-scroll">
+    <table>
+      <caption>As of 30 June 2026</caption>
+      <thead><tr><th>Metric</th><th>Shariah</th><th>Conventional</th></tr></thead>
+      <tbody>
+        <tr><td>P/E, trailing</td><td>18.9</td><td>20.0</td></tr>
+        <tr><td>P/E, forward</td><td>13.5</td><td>15.6</td></tr>
+        <tr><td>Dividend yield</td><td>2.7%</td><td>3.4%</td></tr>
+        <tr><td>Price/book</td><td>2.4</td><td>2.1</td></tr>
+        <tr><td>Price/sales</td><td>2.3</td><td>2.2</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>None of this is an argument against investing this way. That decision was never about maximising return for me in the first place, it's a values call, not a returns call. What I wanted was an honest number for what the values call costs, and now I have one for this specific window: a real, measurable gap, concentrated almost entirely in the one sector the screen can't touch. Whether that's a price worth paying is a personal question. At least now it's one I can answer with an actual figure instead of a guess.</p>
+
+  <details>
+    <summary>How I actually got these numbers</summary>
+    <p>I used S&amp;P Dow Jones Indices' own quarterly Shariah scorecard rather than building a stock-by-stock backtest myself. That was a deliberate choice: the S&amp;P/ASX 200 Shariah index is a real, audited index that's actually tracked, not a basket I assembled from historical prices I'd have had to piece together and couldn't fully verify. Their screening methodology follows the standard AAOIFI approach: it excludes companies in conventional banking and finance, alcohol, gambling, and a few similar sectors outright, then applies three financial ratio caps to what's left, debt, cash and interest-bearing securities, and accounts receivable, each capped at roughly a third of market capitalisation (a bit higher for receivables).</p>
+    <p>For the Sharpe ratios, I used the current RBA cash rate (4.35%) as the risk-free rate, applied flatly across both the 3 and 5 year windows. That's a simplification I want to be upfront about: the actual cash rate was a lot lower for part of both periods, so these Sharpe numbers understate how each index did against the risk-free rate that actually applied at the time. I didn't have reliable historical daily cash rate data on hand to do it properly period by period, and I'd rather flag that limitation clearly than quietly paper over it.</p>
+    <p>One number I left out on purpose: the scorecard lists a price-to-cash-flow multiple of 99.0 for the conventional index, which is almost certainly an artefact of a near-zero aggregate cash flow figure rather than a real valuation multiple, so I didn't think it was honest to chart or compare.</p>
+    <p>Everything here is total return in AUD, as published, with no fees, transaction costs, or fund-specific tracking error factored in. And this is one window, not a law of nature. The QTD and YTD numbers already show the gap can run the other way when different sectors are leading.</p>
+  </details>
+
+  <footer>
+    <p>Source: S&amp;P Dow Jones Indices, <a href="https://www.spglobal.com/spdji/en/documents/performance-reports/scorecard-sp-shariah-djim.pdf" target="_blank" rel="noopener">Shariah Indices Scorecard</a>, data as of 30 June 2026. Index page: <a href="https://www.spglobal.com/spdji/en/indices/equity/sp-asx-200-shariah/" target="_blank" rel="noopener">S&amp;P/ASX 200 Shariah</a>. RBA cash rate via <a href="https://www.rba.gov.au/cash-rate-target-overview.html" target="_blank" rel="noopener">rba.gov.au</a>.</p>
+  </footer>
+</div>
+
+<script src="chart.js"></script>
+</body>
+</html>
