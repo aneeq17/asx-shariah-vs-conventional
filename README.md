@@ -2,7 +2,7 @@
 
 A short analysis comparing the official S&P/ASX 200 Shariah index against the S&P/ASX 200, using S&P Dow Jones Indices' published scorecard (data as of 30 June 2026). Covers returns, volatility, Sharpe ratios, and valuation multiples across both indices, with methodology and limitations documented on the page itself.
 
-Live page (once deployed): `https://<your-github-username>.github.io/asx-shariah-vs-conventional/`
+Live page (once deployed): `https://<aneeq17>.github.io/asx-shariah-vs-conventional/`
 
 ## Files
 
@@ -17,7 +17,7 @@ Live page (once deployed): `https://<your-github-username>.github.io/asx-shariah
 3. Upload these three files (and the `data/` folder) into the repo, keeping the same folder structure. Easiest way: on the repo page, click "Add file" -> "Upload files", drag in this whole folder, commit.
 4. Go to the repo's Settings -> Pages.
 5. Under "Build and deployment", set Source to "Deploy from a branch", branch `main`, folder `/ (root)`. Save.
-6. Wait about a minute, then your page is live at `https://<your-username>.github.io/asx-shariah-vs-conventional/`.
+6. Wait about a minute, then your page is live at `https://<aneeq17>.github.io/asx-shariah-vs-conventional/`.
 
 That link is yours permanently: it's tied to your GitHub account, not any third-party trial or demo service, so it won't expire or sleep. If you ever want to update the numbers or wording, edit `index.html` (and `data/shariah-scorecard-2026-06-30.json` to match) directly in GitHub's web editor, or clone the repo locally.
 
