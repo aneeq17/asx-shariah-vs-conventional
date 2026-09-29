@@ -1,0 +1,36 @@
+{
+  "source": "S&P Dow Jones Indices, Shariah Indices Scorecard",
+  "source_url": "https://www.spglobal.com/spdji/en/documents/performance-reports/scorecard-sp-shariah-djim.pdf",
+  "index_page_url": "https://www.spglobal.com/spdji/en/indices/equity/sp-asx-200-shariah/",
+  "report_as_of": "2026-06-30",
+  "risk_free_proxy": {
+    "description": "RBA cash rate target, used as a static risk-free proxy for Sharpe ratio calculations",
+    "value_pct": 4.35,
+    "as_of": "2026-08-12",
+    "source_url": "https://www.rba.gov.au/cash-rate-target-overview.html",
+    "limitation": "Applied flatly across 3-year and 5-year windows; the actual RBA cash rate was materially lower for part of both windows, so Sharpe ratios here understate risk-adjusted performance relative to the rate that actually prevailed at each point in time."
+  },
+  "indices": {
+    "shariah": {
+      "name": "S&P/ASX 200 Shariah",
+      "stock_count": 80,
+      "returns_pct": { "qtd": 7.0, "ytd": 2.9, "1yr": 5.1, "3yr_annualized": 4.5, "5yr_annualized": 4.3 },
+      "volatility_pct": { "3yr_stdev": 12.6, "5yr_stdev": 14.0 },
+      "valuation": { "pe_trailing": 18.9, "pe_forward": 13.5, "dividend_yield_pct": 2.7, "price_book": 2.4, "price_sales": 2.3 },
+      "sharpe": { "3yr": 0.01, "5yr": -0.00 }
+    },
+    "conventional": {
+      "name": "S&P/ASX 200",
+      "stock_count": 200,
+      "returns_pct": { "qtd": 4.0, "ytd": 2.4, "1yr": 6.1, "3yr_annualized": 10.6, "5yr_annualized": 7.8 },
+      "volatility_pct": { "3yr_stdev": 10.8, "5yr_stdev": 12.4 },
+      "valuation": { "pe_trailing": 20.0, "pe_forward": 15.6, "dividend_yield_pct": 3.4, "price_book": 2.1, "price_sales": 2.2 },
+      "sharpe": { "3yr": 0.58, "5yr": 0.28 }
+    }
+  },
+  "notes": [
+    "P/CF (price-to-cash-flow) omitted from valuation comparison: the conventional index's published figure (99.0) is an outlier consistent with a near-zero aggregate cash-flow denominator, not a meaningful multiple.",
+    "Sharpe ratio = (annualized return - risk_free_proxy) / annualized volatility.",
+    "This is published index-level data (an audited, live-tracked S&P index), not a stock-by-stock backtest constructed from raw price history."
+  ]
+}
